@@ -10,7 +10,7 @@ int main(void)
 {
 int i;
 char y;
-for (i = 0 ; i <= 10 ; i++)
+for (i = 0 ; i < 10 ; i++)
 printf("%d", i);
 
 for (y = 'a' ; y <= 'f' ; y++)
