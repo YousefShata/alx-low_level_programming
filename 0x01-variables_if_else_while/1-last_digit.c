@@ -33,7 +33,7 @@ n = n * -1;
 }
 
 if (n > 5)
-printf("%d and is greater then 5\n", n);
+printf("%d and is greater than 5\n", n);
 else if (n == 0)
 printf("%d and is 0\n", n);
 else if (n < 6 && n != 0)
