@@ -14,7 +14,7 @@ int n;
 int flag = 0;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-printf("last digit of %d is ", n);
+printf("Last digit of %d is ", n);
 
 if (n < 0)
 {
