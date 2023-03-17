@@ -1,7 +1,11 @@
 #include <stdio.h>
 
 /**
- * main function display string Programming is like bulding a multilingual puzzle using puts
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ *
+ * main function display string using puts
  */
 int main(void)
 {
