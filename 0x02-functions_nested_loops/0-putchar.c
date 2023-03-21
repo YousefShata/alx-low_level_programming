@@ -14,5 +14,5 @@ size_t len = strlen(str);
 
 write(STDOUT_FILENO, str, len);
 
-return (1);
+return (0);
 }
