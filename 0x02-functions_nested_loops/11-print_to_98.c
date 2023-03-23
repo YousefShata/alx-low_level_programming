@@ -14,12 +14,12 @@ printf("%d", n);
 if (n > 98)
 {
 n--;
-printf(" ,");
+printf(", ");
 }
 else if (n < 98)
 {
 n++;
-printf(" ,");
+printf(", ");
 }
 }
 printf("%d\n", n);
