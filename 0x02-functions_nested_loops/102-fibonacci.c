@@ -14,5 +14,6 @@ y = y + x;
 x = flag;
 printf("%ld", y);
 }
+putchar('\n');
 return (0);
 }
