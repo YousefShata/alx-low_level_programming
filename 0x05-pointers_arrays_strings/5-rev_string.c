@@ -18,7 +18,7 @@ start++;
 i++;
 }
 start--;
-for (j = 0 ; j <= (i / 2); j++)
+for (j = 0 ; j <= ((i-1) / 2); j++)
 {
 tmp = *end;
 *end = *start;
