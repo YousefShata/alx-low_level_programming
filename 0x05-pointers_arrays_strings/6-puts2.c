@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 /**
  * puts2 - print half of the string
  * @str: input string
@@ -6,7 +7,7 @@
  */
 void puts2(char *str)
 {
-int len = _strlen(str);
+int len = strlen(str);
 int i;
 
 for (i = 0 ; i <= len + 1; i += 2 )
