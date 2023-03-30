@@ -10,7 +10,7 @@ char *p = str;
 
 while (*p)
 {
-if (*p > 'a' && *p <= 'z')
+if (*p >= 'a' && *p <= 'z')
 *p = *p - 32;
 p++;
 }
