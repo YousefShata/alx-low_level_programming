@@ -8,8 +8,8 @@ char *leet(char *str)
 {
 char *alp = "aAeEoOtTlL";
 char *numb = "4433007711";
-int i ;
-int j ;
+int i;
+int j;
 
 for (i = 0; str[i] != '\0'; i++)
 {
