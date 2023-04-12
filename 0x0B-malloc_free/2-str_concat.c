@@ -14,6 +14,12 @@ int size2 = strlen(s2);
 int i, j;
 char *p;
 
+if (s1 == NULL)
+size1 = 0;
+
+if (s2 == NULL)
+size2 = 0;
+
 if (s1 == NULL && s2 == NULL)
 return (NULL);
 
