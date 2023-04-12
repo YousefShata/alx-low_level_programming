@@ -23,10 +23,10 @@ size2 = 0;
 else
 size2 = strlen(s2);
 
-if (s1 == NULL && s2 == NULL)
-return (NULL);
-
 p = malloc(size1 + size2 + 1);
+
+if (p == NULL)
+return (NULL);
 
 for (i = 0; i < size1; i++)
 p[i] = s1[i];
