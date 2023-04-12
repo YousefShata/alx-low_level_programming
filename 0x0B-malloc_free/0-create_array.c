@@ -13,11 +13,11 @@ unsigned int i;
 char *p;
 
 if (size == 0)
-return NULL;
+return (NULL);
 
 p = malloc(size * sizeof(char));
 
-for ( i = 0; i < size; i++)
+for (i = 0; i < size; i++)
 p[i] = c;
 
 return (p);
