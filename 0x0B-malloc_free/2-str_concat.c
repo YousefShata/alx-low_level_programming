@@ -34,6 +34,6 @@ p[i] = s1[i];
 for (j = 0; j < size2; j++)
 p[i + j] = s2[j];
 
-p[i + j + 1] = '\0';
+p[i + j] = '\0';
 return (p);
 }
