@@ -31,7 +31,7 @@ size = len1 + len2;
 p = malloc(sizeof(char) * size + 1);
 
 if (p == NULL)
-	return (NULL);
+	return ("");
 
 for (i = 0; i < len1; i++)
 {
