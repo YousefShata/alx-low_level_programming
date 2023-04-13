@@ -11,7 +11,7 @@ void *p;
 
 p = malloc(b);
 
-if (p == NULL)
+if (!p)
 	exit(98);
 
 return (p);
