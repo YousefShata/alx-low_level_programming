@@ -26,7 +26,7 @@ len2 = strlen(s2);
 if (n > len2)
 	n = len2;
 
-size = len1 + len2;
+size = len1 + n;
 
 p = malloc(sizeof(char) * size + 1);
 
