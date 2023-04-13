@@ -23,7 +23,7 @@ if (s2 == NULL)
 len1 = strlen(s1);
 len2 = strlen(s2);
 
-if (n >= len2)
+if (n > len2)
 	n = len2;
 
 size = len1 + len2;
@@ -31,7 +31,7 @@ size = len1 + len2;
 p = malloc(sizeof(char) * size + 1);
 
 if (p == NULL)
-	return ("");
+	return (NULL);
 
 for (i = 0; i < len1; i++)
 {
