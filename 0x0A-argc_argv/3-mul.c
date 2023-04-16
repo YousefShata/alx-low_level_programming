@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * main - print the name of the prgoramm
- * @argc: arguments counter
+ * @args: arguments counter
  * @argv: pointer to the arrguments
  * Return: 0 to indicate sucess , 1 on failing
  */
