@@ -24,7 +24,7 @@ doggy = malloc(sizeof(dog_t));
 if (doggy == NULL)
 	return (NULL);
 
-copname = malloc(sname);
+copname = malloc(sname + 1);
 if (copname == NULL)
 	return (NULL);
 
@@ -34,7 +34,7 @@ for (i = 0; i < sname ; i++)
 }
 copname[i] = '\0';
 
-copowner = malloc(sowner);
+copowner = malloc(sowner + 1);
 if (copowner == NULL)
 	return (NULL);
 
