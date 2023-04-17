@@ -18,11 +18,12 @@ int sname, sowner;
 if (name == NULL || age < 0 || owner == NULL)
 	return (NULL);
 
-sname = strlen(name);
-sowner = strlen(owner);
 doggy = malloc(sizeof(dog_t));
 if (doggy == NULL)
 	return (NULL);
+
+sname = strlen(name);
+sowner = strlen(owner);
 
 copname = malloc(sname + 1);
 if (copname == NULL)
@@ -49,5 +50,4 @@ doggy->age = age;
 doggy->owner = copowner;
 
 return (doggy);
-
 }
