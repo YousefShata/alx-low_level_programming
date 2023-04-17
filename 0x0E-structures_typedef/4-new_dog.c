@@ -15,7 +15,7 @@ dog_t *doggy;
 char *copname;
 char *copowner;
 int sname, sowner;
-if (name == NULL || owner == NULL)
+if (name == NULL || age < 0 || owner == NULL)
 	return (NULL);
 
 sname = strlen(name);
