@@ -15,12 +15,12 @@ dog_t *doggy;
 char *copyname;
 char *copyowner;
 int sname = 0, sowner = 0;
-
 if (name == NULL || age < 0 || owner == NULL)
 	return (NULL);
-
-sname = strlen(name);
-sowner = strlen(owner);
+while (name[sname])
+	sname++;
+while (owner[sowner])
+	sowner++;
 
 doggy = malloc(sizeof(dog_t));
 if (doggy == NULL)
@@ -49,6 +49,5 @@ copyowner[i] = '\0';
 doggy->name = copyname;
 doggy->age = age;
 doggy->owner = copyowner;
-
 return (doggy);
 }
