@@ -15,7 +15,7 @@ dog_t *doggy;
 char *copname;
 char *copowner;
 int sname, sowner;
-if (name == NULL || age < 0 || owner == NULL)
+if (name == NULL || owner == NULL)
 	return (NULL);
 
 doggy = malloc(sizeof(dog_t));
@@ -29,7 +29,7 @@ copname = malloc(sname + 1);
 if (copname == NULL)
 	return (NULL);
 
-for (i = 0; i < sname ; i++)
+for (i = 0; name[i] ; i++)
 {
 	copname[i] = name[i];
 }
@@ -39,7 +39,7 @@ copowner = malloc(sowner + 1);
 if (copowner == NULL)
 	return (NULL);
 
-for (i = 0; i < sowner; i++)
+for (i = 0; owner[i]; i++)
 {
 	copowner[i] = owner[i];
 }
