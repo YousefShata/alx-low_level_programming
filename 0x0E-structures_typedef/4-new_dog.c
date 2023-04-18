@@ -12,10 +12,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 int i, j;
 dog_t *doggy;
-char *copname;
-char *copowner;
+char *copyname;
+char *copyowner;
 int sname, sowner;
-if (name == NULL || owner == NULL)
+if (name == NULL || age < 0 || owner == NULL)
 	return (NULL);
 
 sname = strlen(name);
@@ -25,29 +25,29 @@ doggy = malloc(sizeof(dog_t));
 if (doggy == NULL)
 	return (NULL);
 
-copname = malloc(sname + 1);
-if (copname == NULL)
+copyname = malloc(sname + 1);
+if (copyname == NULL)
 	return (NULL);
 
 for (i = 0; name[i] ; i++)
 {
-	copname[i] = name[i];
+	copyname[i] = name[i];
 }
-copname[i] = '\0';
+copyname[i] = '\0';
 
-copowner = malloc(sowner + 1);
-if (copowner == NULL)
+copyowner = malloc(sowner + 1);
+if (copyowner == NULL)
 	return (NULL);
 
 for (j = 0; owner[j]; j++)
 {
-	copowner[j] = owner[j];
+	copyowner[j] = owner[j];
 }
-copowner[j] = '\0';
+copyowner[j] = '\0';
 
-doggy->name = copname;
+doggy->name = copyname;
 doggy->age = age;
-doggy->owner = copowner;
+doggy->owner = copyowner;
 
 return (doggy);
 }
