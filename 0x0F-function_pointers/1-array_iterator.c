@@ -1,7 +1,6 @@
 #include <stdlib.h>
-#include "function_pointers.h"
 /**
- * array_iteratior - call a funciton to each memebr of array
+ * array_iterator - call a funciton to each memebr of array
  * @array: input array
  * @size: size of array
  * @action: pointer to function
