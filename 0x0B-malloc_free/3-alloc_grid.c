@@ -13,7 +13,7 @@ int i, j;
 if (width <= 0 || height <= 0)
 	return (NULL);
 
-ptn = (int **) malloc(sizeof(int) * height);
+ptn = (int **) malloc(sizeof(int *) * height);
 
 if (ptn == NULL)
 	return (NULL);
@@ -33,9 +33,9 @@ ptn[i] = (int *)malloc(sizeof(int) * width);
 	}
 }
 
-for (i = 0; i < width; i++)
+for (i = 0; i < height; i++)
 {
-	for (j = 0; j < height; j++)
+	for (j = 0; j < width; j++)
 	{
 		ptn[i][j] = 0;
 	}
