@@ -10,16 +10,14 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-int size1 = 0;
-int size2 = 0;
-int totalsize, i, j;
+int size1, size2, totalsize, i, j;
 char *ptn;
 
 if (s1 == NULL)
-	return (NULL);
+	size1 = 0;
 
 if (s2 == NULL)
-	return (NULL);
+	size2 = 0;
 
 size1 = strlen(s1);
 size2 = strlen(s2);
