@@ -15,12 +15,14 @@ char *ptn;
 
 if (s1 == NULL)
 	size1 = 0;
+else
+	size1 = strlen(s1);
 
 if (s2 == NULL)
 	size2 = 0;
+else
+	size2 = strlen(s2);
 
-size1 = strlen(s1);
-size2 = strlen(s2);
 totalsize = size1 + size2 + 1;
 
 ptn = malloc(sizeof(char) * totalsize);
