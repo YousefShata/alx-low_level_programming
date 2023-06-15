@@ -15,12 +15,12 @@ int sum = 0;
 for (i = 1; i < argc; i++)
 {
 	for (j = 0; argv[i][j]; j++)
-        {
-                if (isalpha(argv[i][j]))
-                {
-                        printf("Error\n");
-                        return (1);
-                }
+	{
+		if (isalpha(argv[i][ij]))
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
 }
 
