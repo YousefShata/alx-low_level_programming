@@ -40,6 +40,7 @@ dog->name[i] = '\0';
 
 if ((*dog).owner == NULL)
 {
+	free((*dog).name);
 	free(dog);
 	return (NULL);
 }
