@@ -30,7 +30,7 @@ if (dog == NULL)
 if ((*dog).name == NULL)
 {
 	free((*dog).name);
-	free(name);
+	free(dog);
 	return (NULL);
 }
 
@@ -45,7 +45,7 @@ dog->name[i] = '\0';
 if ((*dog).owner == NULL)
 {
 	free((*dog).owner);
-	free(owner);
+	free(dog);
 	return (NULL);
 }
 
