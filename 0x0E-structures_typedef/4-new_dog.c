@@ -54,6 +54,7 @@ for (i = 0; owner[i]; i++)
 	(*dog).owner[i] = owner[i];
 }
 dog->owner[i] = '\0';
+dog->age = age;
 
 return (dog);
 }
