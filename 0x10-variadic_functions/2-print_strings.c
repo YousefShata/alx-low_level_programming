@@ -15,8 +15,8 @@ va_list ap;
 char *next;
 va_start(ap, n);
 
-if (n == 0)
-	return;
+if (separator == null)
+	separator = "";
 
 for (i = 0; i < n; i++)
 {
