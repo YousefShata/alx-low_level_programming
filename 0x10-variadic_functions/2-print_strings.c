@@ -21,8 +21,8 @@ va_start(ap, n);
 
 for (i = 0; i < n; i++)
 {
-	next = va_arg(ap, *char);
-	if (next == NULL)
+	next = va_arg(ap, char *);
+	if (!next)
 		next = "(nil)";
 
 	if (i == 0)
