@@ -7,3 +7,16 @@
  * @head: double pointer to head of list;
  * Return: value at head
  */
+int pop_listint(listint_t **head)
+{
+	listint_t *current;
+	int val;
+
+	if (!head || !(*head))
+		return (0);
+	current = *head;
+	val = current->n;
+	*head = current->next;
+	free(current);
+	return (val);
+}
