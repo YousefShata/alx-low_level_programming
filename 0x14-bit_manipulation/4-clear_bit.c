@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  * clear__bit - sets the value of a bit to 1 at a given index
+  * clear_bit - sets the value of a bit to 1 at a given index
   * @n: unsigned long to change
   * @index: index to change to one
   * Return: 1 if it worked or -1 if an error occurred
