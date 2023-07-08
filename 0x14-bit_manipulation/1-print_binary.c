@@ -5,7 +5,7 @@
  * print_binary - print number in bin
  * @n: input number
  * Return: nothing
- */ 
+ */
 void print_binary(unsigned long int n)
 {
 	if (n > 1)
