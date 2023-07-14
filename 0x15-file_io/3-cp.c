@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int closing(FILE*);
+int closing(int);
 /**
  * main - swap file contents
  * @argc: The number of passed arguments
@@ -12,41 +12,46 @@ int closing(FILE*);
 int main(int argc, char *argv[])
 {
 	char buffer[1024];
-	int r = -1, w = -1, error = 0;
-	FILE *file_to, *file_from;
+	int r = 1, w = 0, error = 0, file_to = -1, file_from = -1;
 
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	file_from = fopen(argv[1], "rb");
-	if (file_from == NULL)
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	r = fread(buffer, 1, 1024, file_from);
-	if (!r)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		closing(file_from);
-		exit(98);
-	}
-	file_to = fopen(argv[2], "w");
-	if (file_to == NULL)
+	file_to = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT);
+	if (file_to < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		closing(file_from);
 		exit(99);
 	}
-	w = fwrite(buffer, 1, 1024, file_to);
-	if (!w)
+	while (r)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		closing(file_from);
-		closing(file_to);
-		exit(99);
+		r = read(file_from, buffer, 1024);
+		if (r < 0)
+        	{
+                	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+                	closing(file_from);
+			closing(file_to);
+                	exit(98);
+		}
+		else if (r == 0)
+			break;
+		w = write(file_to, buffer, r);
+		if (w < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			closing(file_from);
+			closing(file_to);
+			exit(98);
+        	}
 	}
 	error = closing(file_to);
 	if (error < 0)
@@ -56,10 +61,7 @@ int main(int argc, char *argv[])
 	}
 	error = closing(file_from);
 	if (error < 0)
-	{
-		closing(file_to);
 		exit(100);
-	}
 	return (0);
 }
 
@@ -68,13 +70,12 @@ int main(int argc, char *argv[])
  * @description: Description error for closed file
  * Return: 1 on success, -1 on failure
  */
-int closing(FILE *description)
+int closing(int description)
 {
 	int error;
-	int fd = fileno(description);
 
-	error = fclose(description);
+	error = close(description);
 	if (error < 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", description);
 	return (error);
 }
