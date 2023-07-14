@@ -47,10 +47,10 @@ int main(int argc, char *argv[])
 		w = write(file_to, buffer, r);
 		if (w < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
 			closing(file_from);
 			closing(file_to);
-			exit(98);
+			exit(99);
 		}
 	}
 	error = closing(file_to);
