@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
 	{
 		r = read(file_from, buffer, 1024);
 		if (r < 0)
-        	{
-                	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-                	closing(file_from);
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			closing(file_from);
 			closing(file_to);
-                	exit(98);
+			exit(98);
 		}
 		else if (r == 0)
 			break;
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 			closing(file_from);
 			closing(file_to);
 			exit(98);
-        	}
+		}
 	}
 	error = closing(file_to);
 	if (error < 0)
